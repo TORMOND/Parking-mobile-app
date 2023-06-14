@@ -1,8 +1,5 @@
-// import { StatusBar } from 'expo-status-bar';
-// import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
 
-// import { useState } from 'react';
-import { HomePage, loginPage, signupPage } from './slides';
+import { HomePage, LoginPage, SignupPage, MainPage } from './slides';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
@@ -20,8 +17,9 @@ export default function App() {
         component={HomePage}
         options={{title: 'Home'}}
       />
-      <Stack.Screen name="Login" component={loginPage} />
-    <Stack.Screen name="Signup" component={signupPage} />
+    <Stack.Screen name="Login" component={LoginPage} />
+    <Stack.Screen name="Signup" component={SignupPage} />
+    <Stack.Screen name="MainPage" component={MainPage} />
     </Stack.Navigator>
   </NavigationContainer>
    
@@ -29,11 +27,3 @@ export default function App() {
   );
 }
 
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: '#fff',
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//   },
-// });

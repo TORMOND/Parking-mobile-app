@@ -1,9 +1,12 @@
 import HomePage from './Home/HomePage';
-import  loginPage from './Login/LoginPage';
-import signupPage from './Signup/SignUpPage';
+import  LoginPage from './Login/LoginPage';
+import SignupPage from './Signup/SignUpPage';
+import MainPage from './Main/MainPage';
+
 
 export {
     HomePage,
-    loginPage,
-    signupPage
+    LoginPage,
+    SignupPage,
+    MainPage,
 }

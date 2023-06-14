@@ -6,7 +6,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#fff',
-    marginTop: 20,
   },
   Input: {
     flex:1,
@@ -21,23 +20,23 @@ const styles = StyleSheet.create({
   borderWidth: 1,
   borderRadius: 5,
   },
-  Button: {
-    height: 40,
-    width: 300,
-    borderColor: 'blue',
-    backgroundColor:'#fff',
-    marginTop:50,
+   SignIn: {
+    flex:1,
+    width:300,
     padding:10,
-    borderWidth: 1,
-    borderRadius: 5,
+    marginTop:10,
+    flexDirection:'row',
+  },
+  signInText:{
+    color:'#0077b6'
   },
   Login: {
     height: 40,
     width: 200,
     marginTop:50,
-    backgroundColor:'blue',
+    borderColor:'#00b4d8',
+    backgroundColor:'#00b4d8',
     padding:10,
-    borderColor: 'gray',
     borderWidth: 1,
     borderRadius: 5,
   },

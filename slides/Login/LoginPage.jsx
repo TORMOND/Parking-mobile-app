@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import { 
   ActivityIndicator, 
   SafeAreaView, 
@@ -6,13 +6,16 @@ import {
   TextInput,
   TouchableOpacity,
   View,
-  Button 
+  Button,
+  Image
 } from 'react-native';
+
 import styles from './loginpage.syles.js'
+import parkedAudi from './parkedAudi.jpg'
 
 function LoginPage({navigation}) {
-    const login = ()=>{
-
+    const logIn = ()=>{
+      navigation.navigate('MainPage');
     }
     const [loading, isLoading] = useState(false)
     const [password, setPassword] = useState()
@@ -22,6 +25,11 @@ function LoginPage({navigation}) {
  <View
   style={styles.container}
   >
+     <Image
+        source={parkedAudi}
+        resizeMode='cover'
+        
+        />
     <View>
        <View >
     <TextInput
@@ -32,6 +40,7 @@ function LoginPage({navigation}) {
      />
     <TextInput
      value={password}
+     type='password'
      onChangeText={(text)=>setPassword(text)}
      placeholder='password'
      style={styles.TextInput}
@@ -39,24 +48,28 @@ function LoginPage({navigation}) {
     </View>
    
     <TouchableOpacity
-     onPress={login}
-     style={styles.Login}
+            style={styles.Login}
      >
         { !loading && 
-        <Text style={styles.loginText} >LOGIN</Text> }
+        <Text
+         style={styles.loginText}
+         onPress={logIn}
+         >LOGIN</Text> }
         { loading &&  <ActivityIndicator size="small"  /> }     
     </TouchableOpacity>
     </View>
-    <View style={{flex: 1}} >
-       <TouchableOpacity
-     onPress={() => navigation.navigate('Signup')}
-     style={styles.Button}
-     >
-        <Text >Sign Up</Text> 
+  
+   <View style={styles.SignIn}>
+    <Text>Don't have an account? </Text>
+    <TouchableOpacity>
+    <Text
+         style={styles.signInText}
+         onPress={() => navigation.navigate('Signup')}
+         >Sign Up</Text> 
     </TouchableOpacity>
-    </View>
-   
-
+  
+   </View>
+      
    </View>
     </SafeAreaView>
    

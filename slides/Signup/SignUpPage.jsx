@@ -5,10 +5,12 @@ import {
   TouchableOpacity, 
   ActivityIndicator, 
   SafeAreaView, 
-  Text 
+  Text,
+  Image
 } from 'react-native'
-// import {useRouter}
+
 import styles from './signupPage.styles'
+import parkedAudi from './parkedAudi.jpg'
 
 function SignUpPage({navigation}) {
     const [loading, isLoading] = useState(false)
@@ -20,6 +22,10 @@ function SignUpPage({navigation}) {
   return (
     <SafeAreaView   style={{flex: 1}}>
       <View  style={styles.container}>
+        <Image
+        source={parkedAudi}
+        resizeMode='cover'    
+        />
     <View>
     <TextInput
      placeholder='First Name' 
@@ -52,9 +58,19 @@ function SignUpPage({navigation}) {
      onPress={signUp}
      style={styles.Button}
      >
-        { !loading && <Text>SIGN UP</Text> }
+        { !loading && <Text style={{color:'#fff'}}>SIGN UP</Text> }
         { loading &&  <ActivityIndicator size="small"  /> }     
     </TouchableOpacity>
+    <View style={styles.LoginIn}>
+    <Text>Don't have an account? </Text>
+    <TouchableOpacity>
+    <Text
+         style={styles.loginText}
+         onPress={() => navigation.navigate('Login')}
+         >Login</Text> 
+    </TouchableOpacity>
+  
+   </View>
         
   
    </View>
